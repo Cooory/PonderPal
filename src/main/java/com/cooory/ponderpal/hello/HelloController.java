@@ -12,4 +12,10 @@ public class HelloController {
 	public String hello() {
 		return "Hello world!!";
 	}
+	
+	@GetMapping("/hello/jsp")
+	public String helloJsp() {
+		
+		return "hello/hello";
+	}
 }
