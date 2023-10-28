@@ -1,5 +1,7 @@
 package com.cooory.ponderpal.user_info.service;
 
+import java.util.Optional;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -11,6 +13,26 @@ public class UserInfoService {
 
 	@Autowired
 	private UserInfoRepository userInfoRepository;
+	
+	public UserInfo getUser(String email, String password) {
+		
+		Optional<UserInfo> optionalUserInfo =  userInfoRepository.findByEmailAndPassword(email, password);
+		UserInfo userInfo = optionalUserInfo.orElse(null);
+		
+		return userInfo;
+	}
+	
+	public boolean isDuplicateId(String email) {
+		
+		int count = userInfoRepository.countByEmail(email);
+		
+		if(count == 0) {
+			return false;
+		} else {
+			return true;
+		}
+	}
+
 	
 	public UserInfo addUser(
 			String email

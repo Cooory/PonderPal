@@ -9,6 +9,7 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 <link rel="stylesheet" href="/static/css/style.css" type="text/css">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.0/font/bootstrap-icons.css">
+<link rel="stylesheet" href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
 </head>
 <body>
 
@@ -42,8 +43,8 @@
 							<option value="1">Female</option>
 							<option value="1">Other</option>
 				        </select>   
-						<input type="text" id="birthInput" class="form-control mt-3" placeholder="Birth"> <br>
-						<textarea id="introductionInput" class="form-control" cols="40px" rows="5" placeholder="Introduction"></textarea>
+						<input type="text" id="birthInput" class="form-control mt-3" placeholder="Birth">
+						<textarea id="introductionInput" class="form-control mt-3" cols="40px" rows="5" placeholder="Introduction"></textarea>
 						
 						<button type="button" id="signUpBtn" class="btn btn-block mt-3" style="background-color: rgb(252, 234, 136);">Sign Up</button>
 				
@@ -54,7 +55,7 @@
 					<div class="mr-2">
 					Already have an account?
 					</div>
-					<a href="/user/signIn">Sign In</a>
+					<a href="/user/signIn-view">Sign In</a>
 				</div>
 
 			</div>
@@ -66,10 +67,75 @@
 	<script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
 	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+	<script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
 
 
 	<script>
 		$(document).ready(function() {
+			
+			var currentYear = new Date().getFullYear();
+			
+			$("#birthInput").datepicker({
+             	dateFormat: 'dd-mm-yy'
+             	, showOtherMonths:true 
+             	, yearRange: 'c-100:c'
+				, changeYear: true
+				, changeMonth: true
+				, showAnim: "slide"
+			});
+			
+			// duplicate check
+			var isCheckDuplicate = false;
+			var isDuplicate = true;
+			
+			$("#emailInput").on("input", function() {
+				isCheckDuplicate = false;
+				isDuplicate = true;
+				
+				$("#avaliableText").addClass("d-none");
+				$("#duplicateText").addClass("d-none");
+				
+			});
+			
+			$("#isDuplicateBtn").on("click", function() {
+				
+				let email = $("#emailInput").val();
+				
+				
+				$.ajax({
+					type:"get"
+					, url:"/user/duplicateId"
+					, data:{"email":email}
+					, success:function(data) {
+						
+						isCheckDuplicate = true;
+						
+						if(data.isDuplicate) {
+							// 중복 되었다.
+							$("#duplicateText").removeClass("d-none");
+							$("#availableText").addClass("d-none");
+							
+							isDuplicate = true;
+						} else {
+							// 중복되지 않았다.
+							$("#availableText").removeClass("d-none");
+							$("#duplicateText").addClass("d-none");
+							
+							isDuplicate = false;
+						}
+					}
+					, error:function() {
+						alert("Duplicate Check Error");
+					}
+					
+				});
+			
+			
+			
+			
+			
+
+			
 			
 			$("#signUpBtn").on("click", function() {
 				let email = $("#emailInput").val();
@@ -144,8 +210,21 @@
 					}
 				});
 				
+				
+				
+
+	            
+
+	        
 			});
+			
 		});
+			
+		});
+			
+
+
+			
 	</script>
 
 	

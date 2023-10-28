@@ -9,12 +9,9 @@
 </head>
 <body>
 
-	<header class="d-flex justify-content-center align-items-between">
-		<img src="/static/images/logo.png" width="300px">
-		
-		<c:if test="${not empty email }">
-		<div class="mr-3">${userName } <a href="/user/logout">로그아웃</a></div>
-		</c:if>
+	<header class="d-flex align-items-center justify-content-between">
+		<img src="/static/images/logo.png" width="200px">
+		<div>${userFullName } 님 <a href="/user/signOut">로그아웃</a></div>
 	</header>
 	
 </body>
