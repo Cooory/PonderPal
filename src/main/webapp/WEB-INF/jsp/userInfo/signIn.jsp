@@ -15,7 +15,7 @@
 	<div class="container">
 		<section class="content d-flex justify-content-center my-5">
 			<div>
-				<div class="login-box d-flex justify-content-center align-items-start bg-white  border rounded">		
+				<div class="login-box d-flex justify-content-center align-items-start bg-white border rounded">		
 					<div class="w-100 p-5">			
 						<img src="/static/images/logo.png" width="300px" class="mb-3 justify-content-center">
 						<br>

@@ -14,6 +14,17 @@ public class UserInfoService {
 	@Autowired
 	private UserInfoRepository userInfoRepository;
 	
+	public boolean isDuplicateNewPassword(String password) {
+		
+		int count = userInfoRepository.countByPassword(password);
+		
+		if(count == 0) {
+			return false;
+		} else {
+			return true;
+		}
+	}
+	
 	public UserInfo getUser(String email, String password) {
 		
 		Optional<UserInfo> optionalUserInfo =  userInfoRepository.findByEmailAndPassword(email, password);

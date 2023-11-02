@@ -10,6 +10,7 @@
 <body>
 
 	<header class="d-flex align-items-center justify-content-between">
+		<i class="bi bi-list fs-3"></i>
 		<img src="/static/images/logo.png" width="200px">
 		<div>${userFullName } 님 <a href="/user/signOut">로그아웃</a></div>
 	</header>

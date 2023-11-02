@@ -18,14 +18,14 @@
 			<nav class="d-flex justify-content-between">
 				<div class="dropdown">
   					<button class="btn dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-    					정렬 순
+    					최신 순
   					</button>
   					<div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
 					    <a class="dropdown-item" href="#">인기순</a>
 					    <a class="dropdown-item" href="#">최신순</a>
   					</div>
 				</div>
-				<button id="signInBtn" type="submit" class="btn" style="background-color: rgb(252, 234, 136);">글쓰기</button>
+				<button id="signInBtn" type="submit" onclick="location.href= '/post/create-view'" class="btn" style="background-color: rgb(252, 234, 136);">글쓰기</button>
 			</nav>
 			
 			<!-- 카드리스트 -->

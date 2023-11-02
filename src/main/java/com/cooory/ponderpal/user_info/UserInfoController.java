@@ -11,6 +11,12 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Controller
 public class UserInfoController {
 	
+	@GetMapping("/changePassword")
+	public String changePassword() {
+		
+		return "userInfo/changePassword";
+	}
+	
 	@GetMapping("/signIn-view")
 	public String signInInput() {
 		

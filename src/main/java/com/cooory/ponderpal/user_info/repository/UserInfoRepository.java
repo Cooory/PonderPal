@@ -18,5 +18,7 @@ public interface UserInfoRepository extends JpaRepository<UserInfo, Integer> {
 	// SELECT count(1) ...  WHERE `email` = #{email};
 	public int countByEmail(String email);
 	
+	public int countByPassword(String password);
+	
 }
 

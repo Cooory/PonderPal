@@ -1,13 +1,10 @@
 package com.cooory.ponderpal.post.repository;
 
-import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 import com.cooory.ponderpal.post.domain.Post;
 
-@Repository
-public interface PostRepository extends JpaRepository<Post, Integer> {
+@Repository	
+public interface PostRepository {
 
-	
-	
 }

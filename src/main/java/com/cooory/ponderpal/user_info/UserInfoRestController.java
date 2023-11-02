@@ -24,6 +24,22 @@ public class UserInfoRestController {
 	@Autowired
 	private UserInfoService userInfoService;
 	
+	@GetMapping("/duplicateNewPassword")
+	public Map<String, Boolean> duplicateNewPassword(@RequestParam("password") String password) {
+		
+		boolean isDuplicate = userInfoService.isDuplicateNewPassword(password);
+		
+		Map<String, Boolean> resultMap = new HashMap<>();
+		if(isDuplicate) {
+			resultMap.put("isDuplicate", true);
+		} else {
+			resultMap.put("isDuplicate", false);
+		}
+		
+		return resultMap;
+		
+	}
+	
 	@PostMapping("/signIn")
 	public Map<String, String> signIn(
 		@RequestParam("email") String email
