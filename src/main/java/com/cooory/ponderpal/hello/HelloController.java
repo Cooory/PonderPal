@@ -7,15 +7,15 @@ import org.springframework.web.bind.annotation.ResponseBody;
 @Controller
 public class HelloController {
 
-	@GetMapping("/hello")
-	@ResponseBody
-	public String hello() {
-		return "Hello world!!";
-	}
-	
-	@GetMapping("/hello/jsp")
-	public String helloJsp() {
-		
-		return "hello/hello";
-	}
+    @GetMapping("/hello")
+    @ResponseBody
+    public String hello() {
+        return "Hello world!!";
+    }
+
+    @GetMapping("/hello/jsp")
+    public String helloJsp() {
+
+        return "hello/hello";
+    }
 }

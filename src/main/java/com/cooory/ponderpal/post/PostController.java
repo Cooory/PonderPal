@@ -8,15 +8,15 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @RequestMapping("/post")
 public class PostController {
 
-	@GetMapping("/feed-view")
-	public String feed() {
-		
-		return "/post/feed";
-	}
-	
-	@GetMapping("/create-view")
-	public String addPost() {
-		
-		return "/post/create";
-	}
+    @GetMapping("/feed-view")
+    public String feed() {
+
+        return "/post/feed";
+    }
+
+    @GetMapping("/create-view")
+    public String addPost() {
+
+        return "/post/create";
+    }
 }
