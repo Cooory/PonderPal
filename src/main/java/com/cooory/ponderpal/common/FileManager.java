@@ -1,5 +1,6 @@
 package com.cooory.ponderpal.common;
 
+
 import org.springframework.web.multipart.MultipartFile;
 
 import java.io.File;
@@ -9,12 +10,9 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 
 public class FileManager {
-
-
     public static final String FILE_UPLOAD_PATH = "/Users/cory/Desktop/Backend_Bootcamp2/7_SpringProject/upload/PonderPal";
 
     public static String saveFile(int userId, MultipartFile file) {
-
         if (file == null) {
             return null;
         }

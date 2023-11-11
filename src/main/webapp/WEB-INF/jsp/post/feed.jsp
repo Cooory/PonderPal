@@ -28,10 +28,11 @@
 				<button id="signInBtn" type="submit" onclick="location.href= '/post/create-view'" class="btn" style="background-color: rgb(252, 234, 136);">글쓰기</button>
 			</nav>
 			
-			<!-- 카드리스트 -->
-			
-			
-			<!-- /카드리스트 -->
+			<div class="mt-5">
+				<i class="bi bi-person-circle"></i>
+				<div> 님 </div>
+				<button class="btn btn-"></button>
+			</div>
 			
 				
 		</section>

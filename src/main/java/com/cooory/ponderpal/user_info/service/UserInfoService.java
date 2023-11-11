@@ -35,7 +35,6 @@ public class UserInfoService {
         return count != 0;
     }
 
-
     public UserInfo addUser(
             String email
             , String password

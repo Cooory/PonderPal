@@ -16,11 +16,17 @@ public class VoteOption {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
+    @Column(name = "postId")
+    private int postId;
+
     @Column(name = "concernOptionName")
     private String concernOptionName;
 
     @Column(name = "concernOptionDescription")
-    private int concernOptionDescription;
+    private String concernOptionDescription;
+
+    @Column(name = "filePath")
+    private String filePath;
 
     @UpdateTimestamp
     @Column(name = "createdAt", updatable = false)

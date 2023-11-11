@@ -21,7 +21,7 @@
         <div class="line2 d-flex justify-content-between mt-5">
             <select id="concernCategory" class="form-control col-5">
                 <option value="">Category</option>
-                <option value="3"></option>
+                <option value="3">a</option>
                 <option value="6">b</option>
                 <option value="12">c</option>
                 <option value="24">d</option>
