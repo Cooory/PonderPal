@@ -5,6 +5,6 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.List;
 
-public interface VoteOptionRepository extends JpaRepository<VoteOption, Integer> {
-    List<VoteOption> findAllByPostIdEquals(int postId);
+public interface VoteOptionRepository extends JpaRepository<VoteOption, Long> {
+    List<VoteOption> findAllByPostIdEquals(long postId);
 }

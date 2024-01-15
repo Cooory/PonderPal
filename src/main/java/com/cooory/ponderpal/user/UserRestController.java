@@ -1,7 +1,7 @@
-package com.cooory.ponderpal.user_info;
+package com.cooory.ponderpal.user;
 
-import com.cooory.ponderpal.user_info.domain.UserInfo;
-import com.cooory.ponderpal.user_info.service.UserInfoService;
+import com.cooory.ponderpal.user.domain.User;
+import com.cooory.ponderpal.user.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -13,15 +13,15 @@ import java.util.Map;
 // Class for API
 @RestController // @Controller + @ResponseBody
 @RequestMapping("/user")
-public class UserInfoRestController {
+public class UserRestController {
 
     @Autowired
-    private UserInfoService userInfoService;
+    private UserService userService;
 
     @GetMapping("/duplicateNewPassword")
     public Map<String, Boolean> duplicateNewPassword(@RequestParam("password") String password) {
 
-        boolean isDuplicate = userInfoService.isDuplicateNewPassword(password);
+        boolean isDuplicate = userService.isDuplicateNewPassword(password);
 
         Map<String, Boolean> resultMap = new HashMap<>();
         if (isDuplicate) {
@@ -40,18 +40,19 @@ public class UserInfoRestController {
             , @RequestParam("password") String password
             , HttpServletRequest request) {
 
-        UserInfo userInfo = userInfoService.getUser(email, password);
+        User user = userService.getUser(email, password);
 
         Map<String, String> resultMap = new HashMap<>();
-        if (userInfo != null) {
+        if (user != null) {
 
-            // 로그인 성공
+            // Success login
             HttpSession session = request.getSession();
-            // 세션에 로그인이 되었다 라는 정보를 저장
-            // 세션에 사용자와 관련된 정보를 저장
-            // 세션에 사용자 정보가 저장된 경우 로그인된 상태로 파악
-            session.setAttribute("userId", userInfo.getId());
-            session.setAttribute("userFullName", userInfo.getFullName());
+            // Save login info to session
+            // Save user info to session
+            // If user info saved to session, recognize as a login status
+            session.setAttribute("userId", user.getId());
+            session.setAttribute("userFullName", user.getFullName());
+            session.setAttribute("userName", user.getUserName());
 
             resultMap.put("result", "success");
         } else {
@@ -64,7 +65,7 @@ public class UserInfoRestController {
     @GetMapping("/duplicateId")
     public Map<String, Boolean> duplicateId(@RequestParam("email") String email) {
 
-        boolean isDuplicate = userInfoService.isDuplicateId(email);
+        boolean isDuplicate = userService.isDuplicateId(email);
 
         Map<String, Boolean> resultMap = new HashMap<>();
         if (isDuplicate) {
@@ -90,10 +91,10 @@ public class UserInfoRestController {
             , @RequestParam("introduction") String introduction) {
 
 
-        UserInfo userInfo = userInfoService.addUser(email, password, fullName, userName, contactNumber, gender, birth, introduction);
+        User user = userService.addUser(email, password, fullName, userName, contactNumber, gender, birth, introduction);
 
         Map<String, String> resultMap = new HashMap<>();
-        if (userInfo != null) {
+        if (user != null) {
             resultMap.put("result", "success");
         } else {
             resultMap.put("result", "fail");

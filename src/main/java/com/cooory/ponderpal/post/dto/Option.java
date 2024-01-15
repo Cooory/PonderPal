@@ -10,7 +10,7 @@ import org.springframework.web.multipart.MultipartFile;
 public class Option {
 
     private String optionName;
-    private String optionDiscription;
+    private String optionDescription;
     private MultipartFile file;
 
 }

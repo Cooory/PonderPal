@@ -1,20 +1,15 @@
-package com.cooory.ponderpal.post.domain;
+package com.cooory.ponderpal.post.dto;
+
 
 import lombok.Getter;
 import lombok.Setter;
-import org.hibernate.annotations.CreationTimestamp;
-import org.hibernate.annotations.UpdateTimestamp;
 
-import javax.persistence.*;
 import java.time.LocalDateTime;
 
 @Getter
 @Setter
-@Entity
-public class VoteOption {
+public class VoteOptionResDto {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
     private long postId;
@@ -27,10 +22,7 @@ public class VoteOption {
 
     private String imagePath;
 
-    @CreationTimestamp
     private LocalDateTime createdAt;
 
-    @UpdateTimestamp
     private LocalDateTime updatedAt;
-
 }

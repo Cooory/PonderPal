@@ -7,7 +7,7 @@ import lombok.Setter;
 
 @Getter
 @Setter
-public class ConcernOptionDto {
-    private List<ConcernDataDto> concernData;
+public class VoteOptionDataReqDto {
+    private List<VoteOptionReqDto> voteOptions;
 
 }

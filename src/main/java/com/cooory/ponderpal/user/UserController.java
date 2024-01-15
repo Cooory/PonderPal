@@ -1,4 +1,4 @@
-package com.cooory.ponderpal.user_info;
+package com.cooory.ponderpal.user;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -9,24 +9,24 @@ import javax.servlet.http.HttpSession;
 
 @RequestMapping("/user")
 @Controller
-public class UserInfoController {
+public class UserController {
 
     @GetMapping("/changePassword")
     public String changePassword() {
 
-        return "userInfo/changePassword";
+        return "user/changePassword";
     }
 
     @GetMapping("/signIn-view")
     public String signInInput() {
 
-        return "userInfo/signIn";
+        return "user/signIn";
     }
 
     @GetMapping("/signUp-view")
     public String signUpInput() {
 
-        return "userInfo/signUp";
+        return "user/signUp";
     }
 
     @GetMapping("/signOut")

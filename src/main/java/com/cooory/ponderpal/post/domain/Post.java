@@ -2,9 +2,12 @@ package com.cooory.ponderpal.post.domain;
 
 import lombok.Getter;
 import lombok.Setter;
+import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
 
 import javax.persistence.*;
+import java.time.LocalDateTime;
+import java.time.ZonedDateTime;
 import java.util.Date;
 
 @Getter
@@ -14,29 +17,27 @@ public class Post {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    private long id;
 
-    @Column(name = "voteTitle")
     private String title;
 
-    @Column(name = "voteDuration")
+    private String creator;
+
     private int voteDuration;
 
-    @Column(name = "voteHashtag")
-    private int voteHashtag;
+    private String voteCategory;
 
-    @Column(name = "like_count")
+    private String content;
+
     private int likeCount;
 
-    @Column(name = "dislike_count")
     private int dislikeCount;
 
-    @UpdateTimestamp
-    @Column(name = "createdAt", updatable = false)
-    private Date createdAt;
+    @CreationTimestamp
+    private LocalDateTime createdAt;
 
     @UpdateTimestamp
-    @Column(name = "updatedAt")
-    private Date updatedAt;
+    private LocalDateTime updatedAt;
+
 
 }

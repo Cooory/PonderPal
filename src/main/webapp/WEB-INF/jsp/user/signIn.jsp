@@ -72,7 +72,7 @@
 						, success:function(data) {
 							
 							if(data.result == "success") {
-								location.href = "/post/feed-view"
+								location.href = "/post/feed-list"
 							} else {
 								alert("Incorrect email or password.");
 							}

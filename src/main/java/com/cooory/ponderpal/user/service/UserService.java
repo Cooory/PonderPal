@@ -1,41 +1,39 @@
-package com.cooory.ponderpal.user_info.service;
+package com.cooory.ponderpal.user.service;
 
-import com.cooory.ponderpal.user_info.domain.UserInfo;
-import com.cooory.ponderpal.user_info.repository.UserInfoRepository;
+import com.cooory.ponderpal.user.domain.User;
+import com.cooory.ponderpal.user.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.Optional;
 
 @Service
-public class UserInfoService {
+public class UserService {
 
     @Autowired
-    private UserInfoRepository userInfoRepository;
+    private UserRepository userRepository;
 
     public boolean isDuplicateNewPassword(String password) {
 
-        int count = userInfoRepository.countByPassword(password);
+        int count = userRepository.countByPassword(password);
 
         return count != 0;
     }
 
-    public UserInfo getUser(String email, String password) {
+    public User getUser(String email, String password) {
 
-        Optional<UserInfo> optionalUserInfo = userInfoRepository.findByEmailAndPassword(email, password);
-        UserInfo userInfo = optionalUserInfo.orElse(null);
+        Optional<User> optionalUser = userRepository.findByEmailAndPassword(email, password);
+        User user = optionalUser.orElse(null);
 
-        return userInfo;
+        return user;
     }
 
     public boolean isDuplicateId(String email) {
-
-        int count = userInfoRepository.countByEmail(email);
-
+        int count = userRepository.countByEmail(email);
         return count != 0;
     }
 
-    public UserInfo addUser(
+    public User addUser(
             String email
             , String password
             , String fullName
@@ -45,7 +43,7 @@ public class UserInfoService {
             , String birth
             , String introduction) {
 
-        UserInfo userInfo = UserInfo.builder()
+        User user = User.builder()
                 .email(email)
                 .password(password)
                 .fullName(fullName)
@@ -56,7 +54,6 @@ public class UserInfoService {
                 .introduction(introduction)
                 .build();
 
-
-        return userInfoRepository.save(userInfo);
+        return userRepository.save(user);
     }
 }

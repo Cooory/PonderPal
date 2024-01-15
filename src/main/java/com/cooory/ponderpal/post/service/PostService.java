@@ -1,10 +1,12 @@
 package com.cooory.ponderpal.post.service;
 
+import java.time.LocalDateTime;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 import java.util.Optional;
 
+
+import org.springframework.beans.BeanUtils;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.multipart.MultipartFile;
@@ -12,12 +14,12 @@ import org.springframework.web.multipart.MultipartFile;
 import com.cooory.ponderpal.common.FileManager;
 import com.cooory.ponderpal.post.domain.Post;
 import com.cooory.ponderpal.post.domain.VoteOption;
-import com.cooory.ponderpal.post.dto.ConcernDataDto;
-import com.cooory.ponderpal.post.dto.ConcernOptionDto;
-import com.cooory.ponderpal.post.dto.PostDto;
-import com.cooory.ponderpal.post.dto.VoteOptionDto;
+import com.cooory.ponderpal.post.dto.VoteOptionReqDto;
+import com.cooory.ponderpal.post.dto.VoteOptionDataReqDto;
+import com.cooory.ponderpal.post.dto.PostResDto;
 import com.cooory.ponderpal.post.repository.PostRepository;
 import com.cooory.ponderpal.post.repository.VoteOptionRepository;
+import com.cooory.ponderpal.post.dto.VoteOptionResDto;
 
 import lombok.RequiredArgsConstructor;
 
@@ -29,70 +31,98 @@ public class PostService {
     private final VoteOptionRepository voteOptionRepository;
 
     @Transactional(readOnly = true)
-    public PostDto getPost(int postId) {
+    public PostResDto getPost(long postId) {
         Optional<Post> postOpt = postRepository.findById(postId);
         if(postOpt.isEmpty()) {
             return null;
         }
         Post post = postOpt.get();
 
-        PostDto postDto = new PostDto();
+        PostResDto postDto = new PostResDto();
         postDto.setId(post.getId());
         postDto.setTitle(post.getTitle());
+        postDto.setCreator(post.getCreator());
         postDto.setVoteDuration(post.getVoteDuration());
-        postDto.setVoteHashtag(post.getVoteHashtag());
+        postDto.setVoteCategory(post.getVoteCategory());
+        postDto.setContent(post.getContent());
         postDto.setLikeCount(post.getLikeCount());
         postDto.setDislikeCount(post.getDislikeCount());
         postDto.setVoteOptions(new ArrayList<>());
-
-        // 유지 보수 설계 힘드니까
 
 
         List<VoteOption> voteOptions = voteOptionRepository.findAllByPostIdEquals(post.getId());
         for(int i = 0; i < voteOptions.size(); i++) {
             VoteOption voteOption = voteOptions.get(i);
 
-            VoteOptionDto voteOptionDto = new VoteOptionDto();
+            VoteOptionResDto voteOptionDto = new VoteOptionResDto();
             voteOptionDto.setPostId(voteOption.getPostId());
-            voteOptionDto.setConcernOptionName(voteOption.getConcernOptionName());
-            voteOptionDto.setConcernOptionDescription(voteOption.getConcernOptionDescription());
-            voteOptionDto.setFilePath(voteOption.getFilePath());
+            voteOptionDto.setVoteOptionName(voteOption.getVoteOptionName());
+            voteOptionDto.setVoteOptionDescription(voteOption.getVoteOptionDescription());
+            voteOptionDto.setVoteOptionCategory(voteOption.getVoteOptionCategory());
+            voteOptionDto.setImagePath(voteOption.getImagePath());
 
-            List<VoteOptionDto> voteOptionDtos = postDto.getVoteOptions();
+            List<VoteOptionResDto> voteOptionDtos = postDto.getVoteOptions();
             voteOptionDtos.add(voteOptionDto);
         }
         return postDto;
     }
 
     @Transactional
-    public boolean addPost(int userId, String concernName, ConcernOptionDto concernOptions, List<MultipartFile> files) {
+    public boolean addPost(int userId, String postName, VoteOptionDataReqDto voteOptionDataReqDto, List<MultipartFile> files, String userName) {
         Post post = new Post();
-        post.setTitle(concernName); // 이름 통일
+        post.setTitle(postName); // unify names
         //post.setVoteDuration(post.getVoteDuration());
         //post.setVoteHashtag(post.getVoteHashtag());
         //post.setLikeCount(post.getLikeCount());
         //post.setDislikeCount(post.getDislikeCount());
-        post.setCreatedAt(new Date());
-        post.setUpdatedAt(new Date());
+        post.setCreator(userName);
+        post.setCreatedAt(LocalDateTime.now());
+        post.setUpdatedAt(LocalDateTime.now());
 
-        final Post insertedPost = postRepository.save(post); // return 안받아도 되긴 함. 어차피 post 갱신 되긴 함.
+        final Post insertedPost = postRepository.save(post); // Doesn't have to get return.
 
-        for(int i = 0; i < concernOptions.getConcernData().size(); i++) {
-            String filePath = FileManager.saveFile(userId, files.get(i));
+        for(int i = 0; i < voteOptionDataReqDto.getVoteOptions().size(); i++) {
+            String imagePath = FileManager.saveFile(userId, files.get(i));
 
-            ConcernDataDto dto = concernOptions.getConcernData().get(i);
+            VoteOptionReqDto dto = voteOptionDataReqDto.getVoteOptions().get(i);
             VoteOption voteOption = new VoteOption();
             voteOption.setPostId(insertedPost.getId());
-            voteOption.setConcernOptionName(dto.getConcernOptionName());
-            voteOption.setConcernOptionDescription(dto.getConcernOptionDescription());
-            voteOption.setFilePath(filePath);
-            voteOption.setCreatedAt(new Date());
-            voteOption.setUpdatedAt(new Date());
+            voteOption.setVoteOptionName(dto.getVoteOptionName());
+            voteOption.setVoteOptionDescription(dto.getVoteOptionDescription());
+            voteOption.setImagePath(imagePath);
+            voteOption.setCreatedAt(LocalDateTime.now());
+            voteOption.setUpdatedAt(LocalDateTime.now());
 
             voteOptionRepository.save(voteOption);
         }
 
         return true;
+    }
+
+    public List<PostResDto> getPostList() {
+        // postRepository.findAllWithVoteOptions();  // Have to bring Joined results. But JPA oneToMany relation is needed.
+        List<PostResDto> postDtoList = new ArrayList<>();
+
+        List<Post> postList = postRepository.findAll();
+
+        for(Post post : postList) {
+            PostResDto postDto = new PostResDto();
+            BeanUtils.copyProperties(post, postDto);
+
+            List<VoteOptionResDto> voteOptionDtos = new ArrayList<>();
+
+            List<VoteOption> voteOptionList = voteOptionRepository.findAllByPostIdEquals(post.getId());
+            for(VoteOption voteOption : voteOptionList) {
+                VoteOptionResDto voteOptionDto = new VoteOptionResDto();
+                BeanUtils.copyProperties(voteOption, voteOptionDto);
+                voteOptionDtos.add(voteOptionDto);
+            }
+
+            postDto.setVoteOptions(voteOptionDtos);
+            postDtoList.add(postDto);
+        }
+
+        return postDtoList;
     }
 
 //	public int addPost(int userId, String title, String optionName, String optionDiscription, String voteCategory, MultipartFile file) {  //순서가 맞으면 됨
