@@ -39,7 +39,7 @@
         </div>
 
         <div class="d-flex justify-content-center mt-3 mb-3">
-            <button type="button" id="addVoteOptionBtn" class="btn" style="background-color: rgb(252, 234, 136">Add
+            <button type="button" id="addVoteOptionBtn" class="btn" style="background-color: rgb(252, 234, 136">ADD
             </button>
         </div>
 
@@ -56,7 +56,7 @@
 
 
         <div class="d-flex justify-content-center mt-3 mb-3">
-            <button type="button" id="createPostBtn" class="btn" style="background-color: rgb(252, 234, 136">Upload
+            <button type="button" id="createPostBtn" class="btn" style="background-color: rgb(252, 234, 136">UPLOAD
             </button>
         </div>
 

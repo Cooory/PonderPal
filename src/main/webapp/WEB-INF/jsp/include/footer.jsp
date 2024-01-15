@@ -11,7 +11,7 @@
 
 	<footer>
 		<div class="d-flex justify-content-center align-items-center">
-			<div class="text-secondary">Copyright © SNAPSHARE 2023</div>
+			<div class="text-secondary">Copyright © PonderPal 2023</div>
 		</div>
 	</footer>
 	

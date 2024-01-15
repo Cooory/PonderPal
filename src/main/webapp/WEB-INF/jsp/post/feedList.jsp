@@ -19,11 +19,11 @@
             <div class="dropdown">
                 <button class="btn dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown"
                         aria-haspopup="true" aria-expanded="false">
-                    최신 순
+                    Latest
                 </button>
                 <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                    <a class="dropdown-item" href="#">인기순</a>
-                    <a class="dropdown-item" href="#">최신순</a>
+                    <a class="dropdown-item" href="#">Latest</a>
+                    <a class="dropdown-item" href="#">Trending</a>
                 </div>
             </div>
             <button id="signInBtn" type="submit" onclick="location.href= '/post/create-view'" class="btn"

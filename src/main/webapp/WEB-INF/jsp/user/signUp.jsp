@@ -24,16 +24,6 @@
 							<b class="text-secondary">SHARE YOUR MIND</b>
 						</div> <br>
 						
-						<div>
-							<!--IMG TAG-->
-							<img src = "${pageContext.request.contextPath}/mypage/photoView.do" class = "profile-photo">
-							<!--INPUT TAG-->
-							<input type = "file" id = "upload" accept = "image/gif, image/png, image/jpeg">
-							<!--BUTTONS-->
-							<button type="button" class="btn photo-reset" id = "photo_reset" data-bs-dismiss="modal">닫기</button>
-							<button type="button" class="btn" id = "photo_submit">변경</button>
-						</div>
-						
 						<div class="d-flex mt-3">
 							<input type="text" id="emailInput" class="form-control" placeholder="Email">
 							<button type="button" class="btn btn-sm ml-2" id="isDuplicateBtn" style="background-color: rgb(252, 234, 136);">Duplicate Check</button>
