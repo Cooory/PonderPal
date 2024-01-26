@@ -1,11 +1,12 @@
 package com.cooory.ponderpal.post.dto;
 
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 
-@Getter
-@Setter
+import java.util.Objects;
+
+@Data
 public class VoteOptionReqDto {
     private String voteOptionName;
     private String voteOptionDescription;
+
 }

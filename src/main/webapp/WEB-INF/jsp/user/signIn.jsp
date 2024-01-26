@@ -11,7 +11,6 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.0/font/bootstrap-icons.css">
 </head>
 <body>
-
 	<div class="container">
 		<section class="content d-flex justify-content-center my-5">
 			<div>

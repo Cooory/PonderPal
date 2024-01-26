@@ -5,42 +5,22 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="fe3c6c10-de22-4763-836e-691ab6f33b14" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/cooory/ponderpal/post/dto/PostResDto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/cooory/ponderpal/post/dto/VoteOptionReqDto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/cooory/ponderpal/post/dto/VoteOptionResDto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/post/feedList.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.jar" beforeDir="false" afterPath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" afterPath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gradlew" beforeDir="false" afterPath="$PROJECT_DIR$/gradlew" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gradlew.bat" beforeDir="false" afterPath="$PROJECT_DIR$/gradlew.bat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/settings.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/settings.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/cooory/ponderpal/post/PostController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cooory/ponderpal/post/PostController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/cooory/ponderpal/post/PostRestController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cooory/ponderpal/post/PostRestController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/cooory/ponderpal/post/domain/Post.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cooory/ponderpal/post/domain/Post.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/cooory/ponderpal/post/domain/VoteOption.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cooory/ponderpal/post/domain/VoteOption.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/cooory/ponderpal/post/dto/ConcernDataDto.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/cooory/ponderpal/post/dto/ConcernOptionDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cooory/ponderpal/post/dto/VoteOptionDataReqDto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/cooory/ponderpal/post/dto/Option.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cooory/ponderpal/post/dto/Option.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/cooory/ponderpal/post/dto/PostDto.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/cooory/ponderpal/post/dto/VoteOptionDto.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/cooory/ponderpal/post/repository/PostRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cooory/ponderpal/post/repository/PostRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/cooory/ponderpal/post/repository/VoteOptionRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cooory/ponderpal/post/repository/VoteOptionRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/cooory/ponderpal/post/service/PostService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cooory/ponderpal/post/service/PostService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/cooory/ponderpal/user_info/UserInfoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cooory/ponderpal/user/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/cooory/ponderpal/user_info/UserInfoRestController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cooory/ponderpal/user/UserRestController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/cooory/ponderpal/user_info/domain/UserInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cooory/ponderpal/user/domain/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/cooory/ponderpal/user_info/repository/UserInfoRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cooory/ponderpal/user/repository/UserRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/cooory/ponderpal/user_info/service/UserInfoService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cooory/ponderpal/user/service/UserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/include/footer.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/include/footer.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/post/feedList.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/post/feedList.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/user/signIn.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/user/signIn.jsp" afterDir="false" />
+    </list>
+    <list id="29e19ebf-2b4c-40f3-a00f-f7e60d7b7da7" name="Changes by brave" comment="">
       <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/include/header.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/include/header.jsp" afterDir="false" />
+    </list>
+    <list id="22c5ba7c-e326-4302-b817-1de6e994e261" name="Changes by 면접위원" comment="">
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/cooory/ponderpal/common/FileManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cooory/ponderpal/common/FileManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/cooory/ponderpal/post/dto/Option.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cooory/ponderpal/post/dto/Option.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/cooory/ponderpal/post/dto/PostResDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cooory/ponderpal/post/dto/PostResDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/cooory/ponderpal/post/dto/VoteOptionDataReqDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cooory/ponderpal/post/dto/VoteOptionDataReqDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/cooory/ponderpal/post/dto/VoteOptionReqDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cooory/ponderpal/post/dto/VoteOptionReqDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/cooory/ponderpal/post/dto/VoteOptionResDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cooory/ponderpal/post/dto/VoteOptionResDto.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/post/create.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/post/create.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/post/feed.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/userInfo/changePassword.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/user/changePassword.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/userInfo/signIn.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/user/signIn.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/userInfo/signUp.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/user/signUp.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/post/feedList.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/post/feedList.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -71,6 +51,20 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="LineStatusTrackerManager">
+    <file path="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/post/feedList.jsp">
+      <ranges>
+        <range start1="9" end1="10" start2="9" end2="10" changelist="fe3c6c10-de22-4763-836e-691ab6f33b14" />
+        <range start1="16" end1="17" start2="16" end2="18" changelist="22c5ba7c-e326-4302-b817-1de6e994e261" />
+        <range start1="34" end1="37" start2="35" end2="63" changelist="fe3c6c10-de22-4763-836e-691ab6f33b14" />
+        <range start1="38" end1="38" start2="64" end2="81" changelist="fe3c6c10-de22-4763-836e-691ab6f33b14" />
+        <range start1="39" end1="40" start2="82" end2="92" changelist="fe3c6c10-de22-4763-836e-691ab6f33b14" />
+        <range start1="41" end1="42" start2="93" end2="95" changelist="22c5ba7c-e326-4302-b817-1de6e994e261" />
+        <range start1="43" end1="43" start2="96" end2="104" changelist="fe3c6c10-de22-4763-836e-691ab6f33b14" />
+        <range start1="44" end1="46" start2="105" end2="127" changelist="fe3c6c10-de22-4763-836e-691ab6f33b14" />
+      </ranges>
+    </file>
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -134,6 +128,11 @@
       <workItem from="1701765824775" duration="111000" />
       <workItem from="1701765946072" duration="2000" />
       <workItem from="1704894773258" duration="773000" />
+      <workItem from="1705655961662" duration="260000" />
+      <workItem from="1705656506269" duration="42000" />
+      <workItem from="1705657183568" duration="10006000" />
+      <workItem from="1706265544876" duration="2315000" />
+      <workItem from="1706270691854" duration="504000" />
     </task>
     <servers />
   </component>

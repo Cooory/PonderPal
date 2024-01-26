@@ -10,7 +10,8 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 
 public class FileManager {
-    public static final String FILE_UPLOAD_PATH = "/Users/cory/Desktop/Backend_Bootcamp2/7_SpringProject/upload/PonderPal";
+//    public static final String FILE_UPLOAD_PATH = "/Users/cory/Desktop/Backend_Bootcamp2/7_SpringProject/upload/
+    public static final String FILE_UPLOAD_PATH = "/Users/cory/Desktop/Backend_Bootcamp2/6_Spring/workspace/PonderPal/src/main/resources/static/upload";
 
     public static String saveFile(int userId, MultipartFile file) {
         if (file == null) {
@@ -59,7 +60,7 @@ public class FileManager {
         // 파일 경로 : D:\\dulumaryT\\web\\230915\\springProject\\upload\\memo/2_9140918290/test.png
         // 경로 규칙 : /images/2_9140918290/test.png
 
-        return "/images" + directoryName + "/" + file.getOriginalFilename();
+        return "/upload" + directoryName + "/" + file.getOriginalFilename();
 
     }
 }
